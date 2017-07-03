@@ -16,11 +16,6 @@ app.get('/profile', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
-  // request.post({ url:proxyURL, form: {issuer:issuers[0]}}, function(err,httpResponse,body){
-  //   // console.log(err);
-  //   // console.log(httpResponse);
-  //   res.write(body);
-  // });
   request.get(proxyURL + '?issuer=' + issuers[0], function(err, httpResponse, body){
     res.write(body);
   });
