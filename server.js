@@ -16,9 +16,11 @@ app.get('/profile', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
-  request.get(proxyURL + '?issuer=' + issuers[0], function(err, httpResponse, body){
-    res.write(body);
-  });
+  // request.get(proxyURL + '?issuer=' + issuers[0], function(err, httpResponse, body){
+  //   res.write(body);
+  // });
+  res.writeHead(302, { 'Location': proxyURL + '?issuer=' + issuers[0] });
+  res.end();
 });
 
 
